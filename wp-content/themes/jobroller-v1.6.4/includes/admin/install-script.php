@@ -539,7 +539,7 @@ function jr_insert_links() {
 	global $wpdb, $app_abbr;
 
 	// first check and make sure this link doesn't already exist
-	$wpdb->get_row("SELECT link_id FROM $wpdb->links WHERE link_url = 'http://www.appthemes.com/'");
+	$wpdb->get_row("SELECT link_id FROM $wpdb->links WHERE link_url = 'http://www.lowongankerjatki.com/'");
 
     if($wpdb->num_rows == 0) {
 
@@ -549,7 +549,7 @@ function jr_insert_links() {
 		if($results) $blogroll_id = $results->term_taxonomy_id; else $blogroll_id = '2';
 
 		$default_links = array();
-		$default_links[] = array('link_url' => 'http://www.appthemes.com/','link_name' => 'Premium WordPress Themes','link_rss' => '','link_notes' =>'');
+		$default_links[] = array('link_url' => 'http://www.lowongankerjatki.com.com/','link_name' => 'Situs penyedia pekerjaan luar negeri yang resmi','link_rss' => '','link_notes' =>'');
 
 		foreach ($default_links as $link) :
 			$wpdb->insert($wpdb->links, $link);

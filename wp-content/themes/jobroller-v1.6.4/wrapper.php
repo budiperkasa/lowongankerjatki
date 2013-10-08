@@ -18,6 +18,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<link rel="stylesheet" id="at-main-css" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
 
     <?php if (get_option('jr_child_theme')) $child_theme = get_option('jr_child_theme'); else $child_theme = 'style-default.css'; ?>
 

@@ -12,16 +12,16 @@
 global $app_version, $app_form_results, $featured_job_cat_id, $jr_log, $app_abbr;
 
 // current version
-$app_theme = 'JobRoller';
+$app_theme = 'LokerTKI';
 $app_abbr = 'jr';
 $app_version = '1.6.4';
 
 $featured_job_cat_id = get_option('jr_featured_category_id');
 
 // Define rss feed urls
-$app_rss_feed = 'http://feeds2.feedburner.com/appthemes';
-$app_twitter_rss_feed = 'http://twitter.com/statuses/user_timeline/appthemes.rss';
-$app_forum_rss_feed = 'http://forums.appthemes.com/external.php?type=RSS2';
+$app_rss_feed = '';
+$app_twitter_rss_feed = '';
+$app_forum_rss_feed = '';
 
 // Framework
 require( dirname(__FILE__) . '/framework/load.php' );

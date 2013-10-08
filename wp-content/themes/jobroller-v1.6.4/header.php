@@ -13,6 +13,8 @@
 <div id="header">
 
 	<div class="inner">
+	      
+	      <div class="tagline"><h2>Situs penyedia pekerjaan luar negeri yang resmi</h2></div>
 
 		<div class="logo_wrap">
 			<?php if (get_option('jr_enable_header_banner')=='yes') : ?>

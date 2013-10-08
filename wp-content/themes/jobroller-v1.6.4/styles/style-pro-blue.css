@@ -22,7 +22,8 @@ body {
 }
 #header {	
 	border-top: 1px solid rgba(255,255,255,0.1);
-	background: #335588 url(../images/style-pro-blue/header_tile.png) repeat-x bottom;
+	/*background: #335588 url(../images/style-pro-blue/header_tile.png) repeat-x bottom;*/
+	background: #001B42;
 }
 #header .inner {
 	background: url(../images/style-pro-blue/header.png) no-repeat center top;
@@ -31,11 +32,20 @@ body {
 #header .logo_wrap {
 	width: 100%;
 }
+.tagline {
+}
+.tagline h2{
+color: #fff;
+text-transform: none;
+font-size: 16px;
+font-size: 25px;
+font-family: 'Alex Brush', cursive;
+}
 #logo {
 	color: #fff;
 	padding-right: 20px;
 	margin: 0 20px 0 0;
-	text-shadow: 0 2px 0 #2d4a77;
+	/*text-shadow: 0 2px 0 #2d4a77;*/
 	letter-spacing: -1px;
 	float: left;
 	text-align: right;
@@ -49,7 +59,7 @@ body {
 	color: #fff;
 }
 #logo small {
-	font-size: 1.1em !important;
+	font-size: 1.4em !important;
 	margin-top: 0.3em;
 	display: block;
 	color: #bbcce5;
@@ -174,7 +184,7 @@ div.section_content {
 	float: right;
 	display: inline;
 	padding: 9px;
-        background: #FDF4F4;
+        background: #F5E7E7;
 	}
 div#footer {
 	font-size: 0.9em;
@@ -535,7 +545,8 @@ ol.resumes dd.location {
 #topNav {
 	padding: 0;
 	margin: 0;
-	background: #2c4975 url(../images/style-pro-blue/top.png) repeat-x bottom;
+	/*background: #2c4975 url(../images/style-pro-blue/top.png) repeat-x bottom;*/
+	background: #000000;
 }
 #topNav .inner {
 	position: relative;
@@ -547,8 +558,8 @@ ol.resumes dd.location {
 	text-align: left;
 	line-height: 1 !important;
 	font-size: 11px;
-	border-right: 1px solid #2f4f7e;
-	border-left: 1px solid #264066;
+	/*border-right: 1px solid #2f4f7e;
+	border-left: 1px solid #264066;*/
 	}
 #topNav li {
 	list-style: none outside;		
@@ -563,15 +574,15 @@ ol.resumes dd.location {
 	text-decoration: none;
 	margin: 0 !important;
 	padding: 10px;
-	border-left: 1px solid #2f4f7e;
-	border-right: 1px solid #264066;
+	/*border-left: 1px solid #2f4f7e;
+	border-right: 1px solid #264066;*/
 	}
 #topNav li.right {
 	float: right;		
 }
 #topNav li.right a {
-	border-left: 1px solid #2f4f7e;
-	border-right: 1px solid #264066;
+	/*border-left: 1px solid #2f4f7e;
+	border-right: 1px solid #264066;*/
 }
 #topNav li.current-menu-item a,
 #topNav li.current_page_item a, #topNav li a:hover, #topNav li a:focus {
@@ -907,7 +918,7 @@ ul.widgets {
 ul.widgets li.widget {
 	list-style-type: none;
 	margin: 0;
-	padding: 30px 0 10px 0;
+	padding: 10px 0 10px 0;
 	font-size: 0.8em;
 	/*border-top: 1px solid #fff;*/
 	border-bottom: 1px solid #dddddd;

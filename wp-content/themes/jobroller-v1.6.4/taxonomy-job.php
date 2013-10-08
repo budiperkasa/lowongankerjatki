@@ -8,9 +8,9 @@
 	do_action('before_jobs_taxonomy', $tax->taxonomy, $tax->slug);
 ?>
 	<div class="section">
+                <?php echo '<small class="rss"><a href="'.single_cat_title("", false).'.png"><img src="'.get_bloginfo('template_url').'/images/'.single_cat_title("", false).'.png" title="'.single_cat_title("", false).' '.__('Jobs RSS Feed','appthemes').'" alt="'.single_cat_title("", false).' '.__('Jobs RSS Feed','appthemes').'" /></a></small>'; ?> 
 
-		<h1 class="pagetitle"><?php echo '<small class="rss"><a href="'.jr_get_current_url().'rss"><img src="'.get_bloginfo('template_url').'/images/feed.png" title="'.single_cat_title("", false).' '.__('Jobs RSS Feed','appthemes').'" alt="'.single_cat_title("", false).' '.__('Jobs RSS Feed','appthemes').'" /></a></small>'; ?> 
-
+		<h1 class="pagetitle">
 		<?php if ( in_array( $tax->taxonomy, array(APP_TAX_CAT, APP_TAX_TYPE) ) ) { ?>
 
 			<?php echo wptexturize($tax->name); ?> <?php _e('Jobs','appthemes'); ?>

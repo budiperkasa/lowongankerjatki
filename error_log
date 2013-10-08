@@ -7,3 +7,4 @@
 [19-Sep-2013 09:42:25 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home1/tukangba/public_html/lowongankerjatki/wp-content/themes/jobroller-v1.6.4/header.php on line 36
 [19-Sep-2013 09:44:56 UTC] PHP Parse error:  syntax error, unexpected T_STRING in /home1/tukangba/public_html/lowongankerjatki/wp-content/themes/jobroller-v1.6.4/header.php on line 27
 [19-Sep-2013 09:49:54 UTC] PHP Parse error:  syntax error, unexpected T_ENDIF in /home1/tukangba/public_html/lowongankerjatki/wp-content/themes/jobroller-v1.6.4/header.php on line 42
+[26-Sep-2013 03:52:27 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home1/tukangba/public_html/lowongankerjatki/wp-content/themes/jobroller-v1.6.4/taxonomy-job.php on line 12

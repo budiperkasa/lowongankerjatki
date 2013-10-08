@@ -241,6 +241,7 @@ h1, h2, h3, h4, h5, h6, .pagetitle {
 	font-weight: bold;
 	line-height: 1.12em;
 	margin-bottom: 1.12em;
+	padding-top: 6px;
 }
 #logo {
 	font-size: 1em;
@@ -383,11 +384,12 @@ h1 small {
 	color: #999;
 }
 small.rss {
-	float: right;
+	float: left;
 	line-height: 1em;
 }
 small.rss img {
 	vertical-align: middle;
+	height: 28px;
 }
 abbr, span.abbr {
 	cursor: help;

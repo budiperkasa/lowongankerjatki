@@ -27,7 +27,7 @@ else
 
 		<h2 class="pagetitle">
 
-			<small class="rss"><a href="<?php echo add_query_arg('post_type', 'job_listing', get_bloginfo('rss2_url')); ?>"><img src="<?php bloginfo('template_url'); ?>/images/feed.png" title="<?php _e('Latest Jobs RSS Feed','appthemes'); ?>" alt="<?php _e('Latest Jobs RSS Feed','appthemes'); ?>" /></a></small>
+			
 
 			<?php _e('Kesempatan kerja yang tersedia:','appthemes'); ?> <?php if ($paged>1) { ?>(<?php _e('page', 'appthemes' ) ?> <?php echo $paged; ?>)<?php } ?>
 
