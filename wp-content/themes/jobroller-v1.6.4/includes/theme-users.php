@@ -8,12 +8,12 @@ function jr_profile_fields( $user ) {
 	if (get_user_meta($user->ID, '_valid_resume_subscription', true)) $can_view_resumes = 1; else $can_view_resumes = 0;
 	
 	?>
-	<h3><?php _e('Job Packs', 'appthemes'); ?></h3>
+	<h3><?php _e('Paket Iklan', 'appthemes'); ?></h3>
 	
 	<table class="form-table">
  
 		<tr>
-			<th><label><?php _e('Current Job Packs', 'appthemes'); ?></label></th>
+			<th><label><?php _e('Paket Iklan Saat ini', 'appthemes'); ?></label></th>
 			<td>
 				<?php
 					$user_packs = jr_get_user_job_packs( $user->ID );
@@ -23,7 +23,7 @@ function jr_profile_fields( $user ) {
 						<table class="job_packs">
 							<thead>
 								<tr>
-								<th>'.__('Name', 'appthemes').'</th>
+								<th>'.__('Nama', 'appthemes').'</th>
 								<th>'.__('Jobs Remaining', 'appthemes').'</th>
 								<th>'.__('Job Duration', 'appthemes').'</th>
 								<th>'.__('Expires', 'appthemes').'</th>

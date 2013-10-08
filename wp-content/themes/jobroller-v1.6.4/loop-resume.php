@@ -34,11 +34,11 @@
 						
 						<?php 
 						if ( get_option($app_abbr.'_resume_listing_visibility') != 'public' )
-							echo __('Resume posted by ','appthemes') . wptexturize(get_the_author_meta('display_name'));
+							echo __('Biodata diposting oleh ','appthemes') . wptexturize(get_the_author_meta('display_name'));
 						
 						$terms = wp_get_post_terms($post->ID, 'resume_category');
 						if ($terms) :
-							_e(' in ','appthemes');
+							_e(' dalam kategori ','appthemes');
 							echo '<a href="'.get_term_link($terms[0]->slug, 'resume_category').'">' . $terms[0]->name .'</a>';
 						endif;
 						?>

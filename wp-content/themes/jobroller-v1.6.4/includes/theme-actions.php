@@ -17,7 +17,7 @@ function jr_blog_post_meta() {
 	global $post;
 
 	?>
-	<p class="meta"><em><?php _e('Posted by', 'appthemes'); ?></em> <?php the_author_posts_link(); ?> | <?php echo jr_ad_posted($post->post_date); ?> | <?php the_category(', '); ?></p>
+	<p class="meta"><em><?php _e('Diposting oleh', 'appthemes'); ?></em> <?php the_author_posts_link(); ?> | <?php echo jr_ad_posted($post->post_date); ?> | <?php the_category(', '); ?></p>
 	<?php
 }
 add_action('appthemes_after_blog_post_title', 'jr_blog_post_meta');

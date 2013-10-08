@@ -1,7 +1,7 @@
 <li class="widget widget-nav">
 	
 <ul class="display_section">
-	<li><a href="#browseby" class="noscroll"><?php _e('Browse by&hellip;', 'appthemes'); ?></a></li>
+	<li><a href="#browseby" class="noscroll"><?php _e('Telusuri berdasarkan&hellip;', 'appthemes'); ?></a></li>
 	<li><a href="#tags" class="noscroll"><?php _e('Tags', 'appthemes'); ?></a></li>
 </ul>
 <div id="browseby" class="tabbed_section"><div class="contents">
@@ -15,7 +15,7 @@
 		);
 		$terms = get_terms( 'job_type', apply_filters('jr_nav_job_type', $args) );
 		if ($terms) :
-			echo '<li><a class="top" href="#open">'.__('Job Type', 'appthemes').'</a> <ul>';
+			echo '<li><a class="top" href="#open">'.__('Lokasi Pekerjaan', 'appthemes').'</a> <ul>';
 		
 			foreach($terms as $term) :
 				echo '<li class="page_item ';
@@ -34,7 +34,7 @@
 		);
 		$terms = get_terms( 'job_salary',  apply_filters('jr_nav_job_salary', $args) );
 		if ($terms) :
-			echo '<li><a class="top" href="#open">'.__('Job Salary', 'appthemes').'</a> <ul>';
+			echo '<li><a class="top" href="#open">'.__('Gaji Yang Ditawarkan', 'appthemes').'</a> <ul>';
 		
 			foreach($terms as $term) :
 				echo '<li class="page_item ';
@@ -53,7 +53,7 @@
 		);
 		$terms = get_terms( 'job_cat', apply_filters('jr_nav_job_cat', $args) );
 		if ($terms) :
-                    echo '<li><a class="top" href="#open">'.__('Job Category', 'appthemes').'</a> <ul>';
+                    echo '<li><a class="top" href="#open">'.__('Kategori Pekerjaan', 'appthemes').'</a> <ul>';
 
                     foreach($terms as $term):
                     	echo '<li class="page_item ';
@@ -80,7 +80,7 @@
 		// By Date
 		if ($datepage = get_option('jr_date_archive_page_id')) :
                     $datepagelink = get_permalink($datepage);
-                    echo '<li><a class="top" href="#open">'.__('Date posted', 'appthemes').'</a> <ul>';
+                    echo '<li><a class="top" href="#open">'.__('Tanggal Posting', 'appthemes').'</a> <ul>';
                     echo '<li><a href="'.add_query_arg('show', 'today', $datepagelink).'">'.__('Today','appthemes').'</a></li>';
                     echo '<li><a href="'.add_query_arg('show', 'week', $datepagelink).'">'.__('This Week','appthemes').'</a></li>';
                     echo '<li><a href="'.add_query_arg('show', 'lastweek', $datepagelink).'">'.__('Last Week','appthemes').'</a></li>';

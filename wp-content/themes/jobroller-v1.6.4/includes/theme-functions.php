@@ -458,6 +458,7 @@ function jr_get_currency_symbol( $country_code = '', $keys = array( 'ASCII' ), $
 	if ( ! $country_code ) $country_code = 'USD';
 
 	$currencies = array(
+	'IDR' => array('name' => __('Indonesian Rupiah', 'appthemes'), 'symbol' => 'Rp', 'ASCII' => '&#38;'),
         'USD' => array('name' => __('US Dollars', 'appthemes'), 'symbol' => '$', 'ASCII' => '&#36;'),
         'EUR' => array('name' => __('Euros', 'appthemes'), 'symbol' => '€', 'ASCII' => '&#128;'),
         'GBP' => array('name' => __('Pounds Sterling', 'appthemes'), 'symbol' => '£', 'ASCII' => '&#163;'),
@@ -1620,7 +1621,7 @@ function jr_job_author() {
 			echo $company_name;
 		}
 
-		$format = __(' &ndash; Posted by <a href="%s">%s</a>', 'appthemes');
+		$format = __(' &ndash; Diposting oleh <a href="%s">%s</a>', 'appthemes');
 	} else {
 		$format = '<a href="%s">%s</a>';
 	}

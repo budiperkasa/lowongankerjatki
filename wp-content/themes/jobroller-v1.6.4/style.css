@@ -384,12 +384,13 @@ h1 small {
 	color: #999;
 }
 small.rss {
-	float: left;
-	line-height: 1em;
+    float: right;
+    line-height: 1em;
+    margin-right: 470px;;
 }
 small.rss img {
 	vertical-align: middle;
-	height: 28px;
+	height: 31px;
 }
 abbr, span.abbr {
 	cursor: help;

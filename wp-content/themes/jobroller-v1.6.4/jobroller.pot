@@ -263,7 +263,7 @@ msgid "Resume title"
 msgstr ""
 
 #: loop-resume.php:37
-msgid "Resume posted by "
+msgid "Biodata diposting oleh "
 msgstr ""
 
 #: loop-resume.php:41
@@ -411,7 +411,7 @@ msgid "+ Add Website"
 msgstr ""
 
 #: single-resume.php:169
-msgid "Summary"
+msgid "Riwayat Hidup"
 msgstr ""
 
 #: single-resume.php:180
@@ -4427,7 +4427,7 @@ msgstr ""
 #: includes/admin/admin-jobpacks.php:342
 #: includes/admin/admin-jobpacks.php:430
 #: includes/forms/application/application-process.php:46
-msgid "&rdquo; is a required field."
+msgid "&rdquo; harus diisi."
 msgstr ""
 
 #: includes/admin/admin-jobpacks.php:349
@@ -7588,7 +7588,7 @@ msgid "e.g. Lead Developer"
 msgstr ""
 
 #: includes/forms/submit-resume/submit-resume-form.php:33
-msgid "Resume Summary"
+msgid "Riwayat Hidup"
 msgstr ""
 
 #: includes/forms/submit-resume/submit-resume-form.php:33
@@ -7696,7 +7696,7 @@ msgid "e.g. English, French"
 msgstr ""
 
 #: includes/forms/submit-resume/submit-resume-process.php:56
-msgid "Resume name"
+msgid "Kolom Nama"
 msgstr ""
 
 #: includes/forms/subscribe-resumes/subcribe-resumes-form.php:53

@@ -1,11 +1,5 @@
 <?php
-/**
- * Main loop for displaying jobs
- *
- * @package JobRoller
- * @author AppThemes
- *
- */
+
 ?>
 
 <?php appthemes_before_loop( 'job_listing' ); ?>
@@ -49,7 +43,7 @@
 					<?php appthemes_before_post_title( 'job_listing' ); ?>
 
                     <dd class="title">
-						<strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
+						<strong><h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3></strong>
 						<?php jr_job_author(); ?>
                     </dd>
 

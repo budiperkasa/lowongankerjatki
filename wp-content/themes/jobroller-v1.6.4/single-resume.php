@@ -92,28 +92,28 @@
 
 						<p class="meta"><?php 
 							
-							echo __('Resume posted by ','appthemes') . '<strong>' .wptexturize(get_the_author_meta('display_name')) . '</strong>';
+							echo __('Biodata diposting oleh ','appthemes') . '<strong>' .wptexturize(get_the_author_meta('display_name')) . '</strong>';
 							
 							$terms = wp_get_post_terms($post->ID, 'resume_category');
 							if ($terms) :
-								_e(' in ','appthemes');
+								_e(' dalam kategori ','appthemes');
 								echo '<strong>'.$terms[0]->name.'</strong>. ';
 							endif;
 							
 							if ($desired_salary = get_post_meta($post->ID, '_desired_salary', true)) :
-								echo sprintf( __('<br/>Desired salary: <strong>%s</strong>. ', 'appthemes'), jr_get_currency($desired_salary) );
+								echo sprintf( __('<br/>Gaji yang diinginkan: <strong>%s</strong>. ', 'appthemes'), jr_get_currency($desired_salary) );
 							endif;
 							
 							$desired_position = wp_get_post_terms($post->ID, 'resume_job_type');
 							if ($desired_position) :
 								$desired_position = current($desired_position);
-								echo '<br/>'.sprintf( __('Desired position type: <strong>%s</strong>. ', 'appthemes'), $desired_position->name );
+								echo '<br/>'.sprintf( __('Tipe posisi yang diinginkan: <strong>%s</strong>. ', 'appthemes'), $desired_position->name );
 							else :
-								echo '<br/>'.__('Desired position type: <strong>Any</strong>. ', 'appthemes');
+								echo '<br/>'.__('Tipe posisi yang diinginkan: <strong>Apapun</strong>. ', 'appthemes');
 							endif;
 							
 							if ($address = get_post_meta($post->ID, 'geo_short_address', true)) :
-								echo '<br/>'.__('Location: ', 'appthemes');
+								echo '<br/>'.__('Lokasi: ', 'appthemes');
 								echo wptexturize($address). ' ';
 								echo wptexturize(get_post_meta($post->ID, 'geo_short_address_country', true));
 							endif;
@@ -123,7 +123,7 @@
 							$contact_details = array();
 							$contact_details['mobile'] = get_post_meta($post->ID, '_mobile', true);
 							$contact_details['tel'] = get_post_meta($post->ID, '_tel', true);
-							$contact_details['email_address'] = get_post_meta($post->ID, '_email_address', true);
+							
 							
 							if ($show_contact_form && $post->post_author!=get_current_user_id()):
 								echo '<p class="button"><a class="contact_button inline noscroll" href="#contact">'.sprintf(__('Contact %s', 'appthemes'),wptexturize(get_the_author_meta('display_name'))).'</a></p>';
@@ -131,9 +131,9 @@
 								if ($contact_details && is_array($contact_details) && sizeof($contact_details)>0) :
 
 									echo '<dl>';
-									if ($contact_details['email_address']) echo '<dt class="email">'.__('Email','appthemes').':</dt><dd><a href="mailto:'.$contact_details['email_address'].'?subject='.__('Your Resume on','appthemes').' '.get_bloginfo('name').'">'.$contact_details['email_address'].'</a></dd>';
-									if ($contact_details['tel']) echo '<dt class="tel">'.__('Tel','appthemes').':</dt><dd>'.$contact_details['tel'].'</dd>';
-									if ($contact_details['mobile']) echo '<dt class="mobile">'.__('Mobile','appthemes').':</dt><dd>'.$contact_details['mobile'].'</dd>';
+									if ($contact_details['email_address']) echo '<dt class="email">'.__('Email','appthemes').':</dt><dd><a href="mailto:'.$contact_details['email_address'].'?subject='.__('Biodata anda di','appthemes').' '.get_bloginfo('name').'">'.$contact_details['email_address'].'</a></dd>';
+									if ($contact_details['tel']) echo '<dt class="tel">'.__('Nomor Telpon','appthemes').':</dt><dd>'.$contact_details['tel'].'</dd>';
+									if ($contact_details['mobile']) echo '<dt class="mobile">'.__('Nomor Handphone','appthemes').':</dt><dd>'.$contact_details['mobile'].'</dd>';
 									echo '</dl>';
 																	
 								endif;									
@@ -153,7 +153,7 @@
 								endforeach;
 								echo '</dl>';
 							endif;
-							if (get_the_author_meta('ID')==get_current_user_id()) echo '<p class="edit_button button"><a class="inline noscroll" href="#websites">'.__('+ Add Website', 'appthemes').'</a></p>';
+							
 						?>
 
 						<?php appthemes_after_post_title(); ?>
@@ -166,7 +166,7 @@
 	
 						<?php appthemes_before_post_content(); ?>
 						
-						<h2 class="resume_section_heading"><span><?php _e('Summary', 'appthemes'); ?></span></h2>
+						<h2 class="resume_section_heading"><span><?php _e('Riwayat Hidup', 'appthemes'); ?></span></h2>
 						<div class="resume_section summary">
 							<?php the_content(); ?>
 						</div>
@@ -177,12 +177,37 @@
 						<?php
 							
 							$display_sections = array(
-								'resume_specialities' => __('Specialties', 'appthemes'),
-								'skills' => __('Skills', 'appthemes'),
-								'resume_languages' => __('Spoken Languages', 'appthemes'),
-								'education' => __('Education', 'appthemes'),
-								'experience' => __('Experience', 'appthemes'),
-								'resume_groups' => __('Groups &amp; Associations', 'appthemes')
+							        'resume_name' => __('Nama', 'appthemes'),
+							        'resume_birthday' => __('Tanggal Lahir', 'appthemes'),
+							        'resume_age' => __('Umur', 'appthemes'),
+							        'resume_height' => __('Tinggi Badan', 'appthemes'),
+							        'resume_weight' => __('Berat Badan', 'appthemes'),
+							        'resume_stat' => __('Status', 'appthemes'),
+							        'resume_nopassport' => __('Nomor Passport', 'appthemes'),
+							        'resume_timepassport' => __('Masa Berlaku Passport', 'appthemes'),
+							        'resume_exitpassport' => __('Tanggal Pengeluaran Passport/KTP', 'appthemes'),
+							        'resume_placepassport' => __('Tempat Pengeluaran Passport/KTP ', 'appthemes'),
+							        'resume_noktp' => __('Nomor KTP', 'appthemes'),
+							        'resume_child' => __('Anak', 'appthemes'),
+							        'resume_saudara' => __('Saudara', 'appthemes'),
+							        'resume_urutan' => __('Urutan', 'appthemes'),
+							        'resume_agama' => __('Agama', 'appthemes'),
+							        'resume_pendidikan' => __('Pendidikan', 'appthemes'),
+							        'nama_bapak' => __('Nama Bapak', 'appthemes'),
+							        'pekerjaan_bapak' => __('Pekerjaan Bapak', 'appthemes'),
+							        'umur_bapak' => __('Umur Bapak', 'appthemes'),
+							        'nama_ibu' => __('Nama Ibu', 'appthemes'),
+							        'pekerjaan_ibu' => __('Pekerjaan Ibu', 'appthemes'),
+							        'umur_ibu' => __('Umur Ibu', 'appthemes'),
+							        'emergency_name' => __('Nama Ahli Waris', 'appthemes'),
+							        'emergency_address' => __('Alamat Ahli Waris', 'appthemes'),
+							        'emergency_tel' => __('Nomor Telepon Ahli Waris', 'appthemes'),
+								'resume_specialities' => __('Bidang yang paling dikuasai', 'appthemes'),
+								'skills' => __('Keahlian', 'appthemes'),
+								'resume_languages' => __('Bahasa yang dikuasai', 'appthemes'),
+								'education' => __('Pendidikan', 'appthemes'),
+								'experience' => __('Pengalaman kerja', 'appthemes'),
+								'resume_groups' => __('Grup &amp; Asosiasi kerja', 'appthemes')
 							);
 							
 							foreach ($display_sections as $term => $section) :
@@ -202,7 +227,232 @@
 										?>
 										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
 										<div class="resume_section">
-											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_education', true))); ?>
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_pendidikan', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_age" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_age', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_height" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_height', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_weight" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_weight', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_stat" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_stat', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_nopassport" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_nopassport', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_timepassport" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_timepassport', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_exitpassport" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_exitpassport', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_placepassport" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_placepassport', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_child" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_child', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_noktp" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_noktp', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_saudara" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_saudara', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_urutan" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_urutan', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_agama" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_agama', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_pendidikan" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_pendidikan', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "nama_bapak" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_nama_bapak', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "umur_bapak" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_umur_bapak', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "pekerjaan_bapak" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_pekerjaan_bapak', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "nama_ibu" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_nama_ibu', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "pekerjaan_ibu" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_pekerjaan_ibu', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "umur_ibu" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_umur_ibu', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "emergency_name" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_emergency_name', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "emergency_address" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_emergency_address', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "emergency_tel" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_emergency_tel', true))); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_name" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php the_title(); ?>
+										</div>
+										<div class="clear"></div>
+										<?php
+									break;
+									case "resume_birthday" : 
+										?>
+										<h2 class="resume_section_heading"><span><?php echo $section; ?></span></h2>
+										<div class="resume_section">
+											<?php echo wpautop(wptexturize(get_post_meta($post->ID, '_resume_birthday', true))); ?>
 										</div>
 										<div class="clear"></div>
 										<?php
@@ -254,7 +504,7 @@
 						?>
 						
 						<?php if (get_the_author_meta('ID')==get_current_user_id()) : ?>
-							<p class="button edit_resume"><a href="<?php echo add_query_arg('edit', $post->ID, get_permalink(get_option('jr_job_seeker_resume_page_id'))); ?>"><?php _e('Edit Resume&nbsp;&rarr;','appthemes'); ?></a></p>
+							<p class="button edit_resume"><a href="<?php echo add_query_arg('edit', $post->ID, get_permalink(get_option('jr_job_seeker_resume_page_id'))); ?>"><?php _e('Edit Biodata&nbsp;&rarr;','appthemes'); ?></a></p>
 						<?php endif; ?>
 						
 						<?php if (get_option('jr_ad_stats_all') == 'yes') { ?><p class="stats"><?php appthemes_stats_counter($post->ID); ?></p> <?php } ?>

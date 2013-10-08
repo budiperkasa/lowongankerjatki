@@ -37,7 +37,7 @@
 	$found = false;
 	ob_start();
 ?>	
-<?php if ($my_query->have_posts()) : $alt = 1; echo '<div class="section"><h2 class="pagetitle"><small class="rss"><a href="'.get_term_feed_link($featured_job_cat_id, 'job_cat').'"><img src="'.get_bloginfo('template_url').'/images/feed.png" title="'.__('Featured Jobs RSS Feed','appthemes').'" alt="'.__('Featured Jobs RSS Feed','appthemes').'" /></a></small> '.__('Featured Jobs','appthemes').'</h2><ol class="jobs">'; while ($my_query->have_posts()) : $my_query->the_post(); 
+<?php if ($my_query->have_posts()) : $alt = 1; echo '<div class="section"><h2 class="pagetitle"> '.__('Unggulan','appthemes').'</h2><ol class="jobs">'; while ($my_query->have_posts()) : $my_query->the_post(); 
 	
 	$post_class = array('job', 'job-featured');
 	
@@ -80,7 +80,7 @@
 				
 				<?php 
 					$author = get_user_by('id', $my_query->post->post_author);
-					if ($author && $link = get_author_posts_url( $author->ID, $author->user_nicename )) echo sprintf( __(' &ndash; Posted by <a href="%s">%s</a>', 'appthemes'), $link, $author->display_name );
+					if ($author && $link = get_author_posts_url( $author->ID, $author->user_nicename )) echo sprintf( __(' &ndash; Diposting oleh <a href="%s">%s</a>', 'appthemes'), $link, $author->display_name );
 				?> 
 			
 			<?php else : ?>

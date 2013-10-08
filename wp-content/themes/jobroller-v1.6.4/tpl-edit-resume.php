@@ -37,6 +37,31 @@ Template Name: Edit Resume Template
 			
 		if (!isset($_POST['save_resume'])) :
 			// Set post data
+			$posted['resume_birthday'] = get_post_meta($resume_id, '_resume_birthday', true);
+                        $posted['resume_age'] = get_post_meta($resume_id, '_resume_age', true);
+			$posted['resume_height'] = get_post_meta($resume_id, '_resume_height', true);
+                        $posted['resume_weight'] = get_post_meta($resume_id, '_resume_weight', true);
+			$posted['resume_stat'] = get_post_meta($resume_id, '_resume_birthday', true);
+			$posted['resume_nopassport'] = get_post_meta($resume_id, '_resume_nopassport', true);
+			$posted['resume_timepassport'] = get_post_meta($resume_id, '_resume_timepassport', true);
+			$posted['resume_exitpassport'] = get_post_meta($resume_id, '_resume_exitpassport', true);
+			$posted['resume_placepassport'] = get_post_meta($resume_id, '_resume_placepassport', true);
+			$posted['resume_noktp'] = get_post_meta($resume_id, '_resume_noktp', true);
+			$posted['resume_child'] = get_post_meta($resume_id, '_resume_child', true);
+			$posted['resume_saudara'] = get_post_meta($resume_id, '_resume_saudara', true);
+			$posted['resume_urutan'] = get_post_meta($resume_id, '_resume_urutan', true);
+			$posted['resume_agama'] = get_post_meta($resume_id, '_resume_agama', true);
+			$posted['resume_pendidikan'] = get_post_meta($resume_id, '_resume_pendidikan', true);
+			$posted['nama_bapak'] = get_post_meta($resume_id, '_nama_bapak', true);
+			$posted['pekerjaan_bapak'] = get_post_meta($resume_id, '_pekerjaan_bapak', true);
+			$posted['nama_ibu'] = get_post_meta($resume_id, '_nama_ibu', true);
+			$posted['pekerjaan_ibu'] = get_post_meta($resume_id, '_pekerjaan_ibu', true);
+			$posted['umur_bapak'] = get_post_meta($resume_id, '_umur_bapak', true);
+			$posted['umur_ibu'] = get_post_meta($resume_id, '_umur_ibu', true);
+			$posted['emergency_name'] = get_post_meta($resume_id, '_emergency_name', true);
+			$posted['emergency_address'] = get_post_meta($resume_id, '_emergency_address', true);
+			$posted['emergency_tel'] = get_post_meta($resume_id, '_emergency_tel', true);
+			// New Set Forms
 			$posted['resume_name'] = $resume_details->post_title;
 			$posted['summary'] = $resume_details->post_content;
 			$posted['skills'] = get_post_meta($resume_id, '_skills', true);
@@ -107,7 +132,7 @@ Template Name: Edit Resume Template
 	
 		<div class="section_content">
 		
-			<h1><?php if ($editing) _e('Edit Resume', 'appthemes'); else _e('Add Resume', 'appthemes'); ?></h1>
+			<h1><?php if ($editing) _e('Edit Biodata', 'appthemes'); else _e('Tambah Biodata', 'appthemes'); ?></h1>
 
 			<?php do_action( 'appthemes_notices' ); ?>
 
