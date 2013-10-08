@@ -1,0 +1,25 @@
+/*
+Theme Name:     Job Roller child
+Theme URI:      http: //JR.example.com/
+Description:    Child theme for the Job Roller theme  from APPTHEMES
+Author:         Rui Guerreiro
+Template:       jobroller
+Version:        0.1.0
+*/
+
+
+
+
+
+@import url("../jobroller/style.css");
+
+.jobcities span.jcities {
+	background-color:#FFFFFF;
+	color:#555 !important;
+	font-size:14px;
+	text-shadow:1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+ol.jobs dd.jobcities{
+width: 140px;
+padding-right: 10px;
+}
